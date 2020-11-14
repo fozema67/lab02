@@ -1,0 +1,10 @@
+set linenumbers
+set tabsize 2
+set titlecolor white,blue
+set numbercolor white,black
+set statuscolor white,black
+set functioncolor white
+set keycolor red,black
+set smooth
+set constantshow
+set morespace

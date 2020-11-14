@@ -1,0 +1,135 @@
+2020-11-14 19:30:23.112 MSK [324] LOG:  starting PostgreSQL 12.4 on x86_64-pc-linux-gnu, compiled by gcc (Debian 8.3.0-6) 8.3.0, 64-bit
+2020-11-14 19:30:23.113 MSK [324] LOG:  listening on IPv6 address "::1", port 5432
+2020-11-14 19:30:23.113 MSK [324] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2020-11-14 19:30:23.118 MSK [324] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2020-11-14 19:30:23.143 MSK [325] LOG:  database system was shut down at 2020-10-20 01:05:08 MSK
+2020-11-14 19:30:23.154 MSK [324] LOG:  database system is ready to accept connections
+2020-11-14 19:33:15.155 MSK [337] ERROR:  database "lab02" already exists
+2020-11-14 19:33:15.155 MSK [337] STATEMENT:  create database lab02
+	;
+2020-11-14 20:58:33.825 MSK [434] ERROR:  relation "employeers" already exists
+2020-11-14 20:58:33.825 MSK [434] STATEMENT:  create table employeers (id integer, lname varchar(100), fname varchar(100), mname varchar(100));
+2020-11-14 20:59:32.695 MSK [442] ERROR:  syntax error at or near "id" at character 61
+2020-11-14 20:59:32.695 MSK [442] STATEMENT:  alter table soft add constraint del_soft_id_pri primary key id;
+2020-11-14 20:59:32.702 MSK [442] ERROR:  there is no unique constraint matching given keys for referenced table "pcs"
+2020-11-14 20:59:32.702 MSK [442] STATEMENT:  alter table installs add constraint del_pc_id_for foreign key(pc_id) references pcs(id);
+2020-11-14 20:59:32.703 MSK [442] ERROR:  syntax error at or near "foreing" at character 53
+2020-11-14 20:59:32.703 MSK [442] STATEMENT:  alter table installs add constraint del_soft_id_for foreing key(soft_id) references soft(id);
+2020-11-14 20:59:32.704 MSK [442] ERROR:  syntax error at or near "id" at character 59
+2020-11-14 20:59:32.704 MSK [442] STATEMENT:  alter table pcs add constraint del_pcs_id_pri primary key id;
+2020-11-14 20:59:32.705 MSK [442] ERROR:  there is no unique constraint matching given keys for referenced table "rooms"
+2020-11-14 20:59:32.705 MSK [442] STATEMENT:  alter table pcs add constraint del_room_id_for foreign key(room_id) references rooms(id);
+2020-11-14 20:59:32.706 MSK [442] ERROR:  syntax error at or near "id" at character 63
+2020-11-14 20:59:32.706 MSK [442] STATEMENT:  alter table rooms add constraint del_rooms_id_pri primary key id;
+2020-11-14 20:59:32.707 MSK [442] ERROR:  there is no unique constraint matching given keys for referenced table "employees"
+2020-11-14 20:59:32.707 MSK [442] STATEMENT:  alter table rooms add constraint del_rooms_id_for foreign key (emp_id) references employees(id);
+2020-11-14 20:59:32.708 MSK [442] ERROR:  syntax error at or near "id" at character 66
+2020-11-14 20:59:32.708 MSK [442] STATEMENT:  alter table employees add constraint del_empl_id_pri primary key id;
+2020-11-14 21:00:56.302 MSK [446] ERROR:  there is no unique constraint matching given keys for referenced table "pcs"
+2020-11-14 21:00:56.302 MSK [446] STATEMENT:  alter table installs add constraint del_pc_id_for foreign key(pc_id) references pcs(id);
+2020-11-14 21:00:56.303 MSK [446] ERROR:  syntax error at or near "foreing" at character 53
+2020-11-14 21:00:56.303 MSK [446] STATEMENT:  alter table installs add constraint del_soft_id_for foreing key(soft_id) references soft(id);
+2020-11-14 21:00:56.311 MSK [446] ERROR:  there is no unique constraint matching given keys for referenced table "rooms"
+2020-11-14 21:00:56.311 MSK [446] STATEMENT:  alter table pcs add constraint del_room_id_for foreign key(room_id) references rooms(id);
+2020-11-14 21:00:56.317 MSK [446] ERROR:  there is no unique constraint matching given keys for referenced table "employees"
+2020-11-14 21:00:56.317 MSK [446] STATEMENT:  alter table rooms add constraint del_rooms_id_for foreign key (emp_id) references employees(id);
+2020-11-14 21:01:55.042 MSK [452] ERROR:  there is no unique constraint matching given keys for referenced table "pcs"
+2020-11-14 21:01:55.042 MSK [452] STATEMENT:  alter table installs add constraint del_pc_id_for foreign key(pc_id) references pcs(id);
+2020-11-14 21:01:55.067 MSK [452] ERROR:  there is no unique constraint matching given keys for referenced table "rooms"
+2020-11-14 21:01:55.067 MSK [452] STATEMENT:  alter table pcs add constraint del_room_id_for foreign key(room_id) references rooms(id);
+2020-11-14 21:01:55.075 MSK [452] ERROR:  there is no unique constraint matching given keys for referenced table "employees"
+2020-11-14 21:01:55.075 MSK [452] STATEMENT:  alter table rooms add constraint del_rooms_id_for foreign key (emp_id) references employees(id);
+2020-11-14 21:03:01.877 MSK [456] ERROR:  multiple primary keys for table "soft" are not allowed
+2020-11-14 21:03:01.877 MSK [456] STATEMENT:  alter table soft add constraint del_soft_id_pri primary key (id);
+2020-11-14 21:03:01.881 MSK [456] ERROR:  constraint "del_soft_id_for" for relation "installs" already exists
+2020-11-14 21:03:01.881 MSK [456] STATEMENT:  alter table installs add constraint del_soft_id_for foreign key(soft_id) references soft(id);
+2020-11-14 21:03:01.881 MSK [456] ERROR:  multiple primary keys for table "pcs" are not allowed
+2020-11-14 21:03:01.881 MSK [456] STATEMENT:  alter table pcs add constraint del_pcs_id_pri primary key (id);
+2020-11-14 21:03:01.884 MSK [456] ERROR:  multiple primary keys for table "rooms" are not allowed
+2020-11-14 21:03:01.884 MSK [456] STATEMENT:  alter table rooms add constraint del_rooms_id_pri primary key (id);
+2020-11-14 21:03:01.887 MSK [456] ERROR:  multiple primary keys for table "employees" are not allowed
+2020-11-14 21:03:01.887 MSK [456] STATEMENT:  alter table employees add constraint del_empl_id_pri primary key (id);
+2020-11-14 21:04:30.663 MSK [466] ERROR:  there is no unique constraint matching given keys for referenced table "pcs"
+2020-11-14 21:04:30.663 MSK [466] STATEMENT:  alter table installs add constraint del_pc_id_for foreign key(pc_id) references pcs(id);
+2020-11-14 21:04:30.676 MSK [466] ERROR:  there is no unique constraint matching given keys for referenced table "rooms"
+2020-11-14 21:04:30.676 MSK [466] STATEMENT:  alter table pcs add constraint del_room_id_for foreign key(room_id) references rooms(id);
+2020-11-14 21:04:30.684 MSK [466] ERROR:  there is no unique constraint matching given keys for referenced table "employees"
+2020-11-14 21:04:30.684 MSK [466] STATEMENT:  alter table rooms add constraint del_rooms_id_for foreign key (emp_id) references employees(id);
+2020-11-14 21:05:51.436 MSK [472] ERROR:  multiple primary keys for table "soft" are not allowed
+2020-11-14 21:05:51.436 MSK [472] STATEMENT:  alter table soft add constraint del_soft_id_pri primary key (id);
+2020-11-14 21:05:51.442 MSK [472] ERROR:  constraint "del_soft_id_for" for relation "installs" already exists
+2020-11-14 21:05:51.442 MSK [472] STATEMENT:  alter table installs add constraint del_soft_id_for foreign key(soft_id) references soft(id);
+2020-11-14 21:05:51.443 MSK [472] ERROR:  multiple primary keys for table "pcs" are not allowed
+2020-11-14 21:05:51.443 MSK [472] STATEMENT:  alter table pcs add constraint del_pcs_id_pri primary key (id);
+2020-11-14 21:05:51.446 MSK [472] ERROR:  multiple primary keys for table "rooms" are not allowed
+2020-11-14 21:05:51.446 MSK [472] STATEMENT:  alter table rooms add constraint del_rooms_id_pri primary key (id);
+2020-11-14 21:05:51.448 MSK [472] ERROR:  multiple primary keys for table "employees" are not allowed
+2020-11-14 21:05:51.448 MSK [472] STATEMENT:  alter table employees add constraint del_empl_id_pri primary key (id);
+2020-11-14 21:06:06.998 MSK [476] ERROR:  there is no unique constraint matching given keys for referenced table "pcs"
+2020-11-14 21:06:06.998 MSK [476] STATEMENT:  alter table installs add constraint del_pc_id_for foreign key(pc_id) references pcs(id);
+2020-11-14 21:06:07.010 MSK [476] ERROR:  there is no unique constraint matching given keys for referenced table "rooms"
+2020-11-14 21:06:07.010 MSK [476] STATEMENT:  alter table pcs add constraint del_room_id_for foreign key(room_id) references rooms(id);
+2020-11-14 21:06:07.020 MSK [476] ERROR:  there is no unique constraint matching given keys for referenced table "employees"
+2020-11-14 21:06:07.020 MSK [476] STATEMENT:  alter table rooms add constraint del_rooms_id_for foreign key (emp_id) references employees(id);
+2020-11-14 21:06:43.897 MSK [479] ERROR:  multiple primary keys for table "soft" are not allowed
+2020-11-14 21:06:43.897 MSK [479] STATEMENT:  alter table soft add constraint del_soft_id_pri primary key (id);
+2020-11-14 21:06:43.902 MSK [479] ERROR:  constraint "del_soft_id_for" for relation "installs" already exists
+2020-11-14 21:06:43.902 MSK [479] STATEMENT:  alter table installs add constraint del_soft_id_for foreign key(soft_id) references soft(id);
+2020-11-14 21:06:43.903 MSK [479] ERROR:  multiple primary keys for table "pcs" are not allowed
+2020-11-14 21:06:43.903 MSK [479] STATEMENT:  alter table pcs add constraint del_pcs_id_pri primary key (id);
+2020-11-14 21:06:43.906 MSK [479] ERROR:  multiple primary keys for table "rooms" are not allowed
+2020-11-14 21:06:43.906 MSK [479] STATEMENT:  alter table rooms add constraint del_rooms_id_pri primary key (id);
+2020-11-14 21:06:43.910 MSK [479] ERROR:  multiple primary keys for table "employees" are not allowed
+2020-11-14 21:06:43.910 MSK [479] STATEMENT:  alter table employees add constraint del_empl_id_pri primary key (id);
+2020-11-14 21:09:37.880 MSK [488] ERROR:  there is no unique constraint matching given keys for referenced table "pcs"
+2020-11-14 21:09:37.880 MSK [488] STATEMENT:  alter table installs add constraint del_pc_id_for foreign key(pc_id) references pcs(id);
+2020-11-14 21:09:37.890 MSK [488] ERROR:  there is no unique constraint matching given keys for referenced table "rooms"
+2020-11-14 21:09:37.890 MSK [488] STATEMENT:  alter table pcs add constraint del_room_id_for foreign key(room_id) references rooms(id);
+2020-11-14 21:09:37.897 MSK [488] ERROR:  there is no unique constraint matching given keys for referenced table "employees"
+2020-11-14 21:09:37.897 MSK [488] STATEMENT:  alter table rooms add constraint del_rooms_id_for foreign key (emp_id) references employees(id);
+2020-11-14 21:15:23.647 MSK [498] ERROR:  relation "pcs1" does not exist
+2020-11-14 21:15:23.647 MSK [498] STATEMENT:  alter table installs add constraint del_pc_id_for foreign key(pc_id) references pcs1(id);
+2020-11-14 21:15:23.661 MSK [498] ERROR:  relation "rooms1" does not exist
+2020-11-14 21:15:23.661 MSK [498] STATEMENT:  alter table pcs add constraint del_room_id_for foreign key(room_id) references rooms1(id);
+2020-11-14 21:15:23.667 MSK [498] ERROR:  relation "employees1" does not exist
+2020-11-14 21:15:23.667 MSK [498] STATEMENT:  alter table rooms add constraint del_rooms_id_for foreign key (emp_id) references employees1(id);
+2020-11-14 21:16:26.142 MSK [502] ERROR:  multiple primary keys for table "soft" are not allowed
+2020-11-14 21:16:26.142 MSK [502] STATEMENT:  alter table soft add constraint del_soft_id_pri primary key (id);
+2020-11-14 21:16:26.148 MSK [502] ERROR:  constraint "del_soft_id_for" for relation "installs" already exists
+2020-11-14 21:16:26.148 MSK [502] STATEMENT:  alter table installs add constraint del_soft_id_for foreign key(soft_id) references soft(id);
+2020-11-14 21:16:26.149 MSK [502] ERROR:  multiple primary keys for table "pcs" are not allowed
+2020-11-14 21:16:26.149 MSK [502] STATEMENT:  alter table pcs add constraint del_pcs_id_pri primary key (id);
+2020-11-14 21:16:26.152 MSK [502] ERROR:  multiple primary keys for table "rooms" are not allowed
+2020-11-14 21:16:26.152 MSK [502] STATEMENT:  alter table rooms add constraint del_rooms_id_pri primary key (id);
+2020-11-14 21:16:26.152 MSK [502] ERROR:  column "rooms_id" referenced in foreign key constraint does not exist
+2020-11-14 21:16:26.152 MSK [502] STATEMENT:  alter table rooms add constraint del_rooms_id_for foreign key (emp_id) references employees(rooms_id);
+2020-11-14 21:16:26.153 MSK [502] ERROR:  multiple primary keys for table "employees" are not allowed
+2020-11-14 21:16:26.153 MSK [502] STATEMENT:  alter table employees add constraint del_empl_id_pri primary key (id);
+2020-11-14 21:16:33.662 MSK [507] ERROR:  there is no unique constraint matching given keys for referenced table "pcs"
+2020-11-14 21:16:33.662 MSK [507] STATEMENT:  alter table installs add constraint del_pc_id_for foreign key(pc_id) references pcs(id);
+2020-11-14 21:16:33.673 MSK [507] ERROR:  there is no unique constraint matching given keys for referenced table "rooms"
+2020-11-14 21:16:33.673 MSK [507] STATEMENT:  alter table pcs add constraint del_room_id_for foreign key(room_id) references rooms(id);
+2020-11-14 21:16:33.682 MSK [507] ERROR:  column "rooms_id" referenced in foreign key constraint does not exist
+2020-11-14 21:16:33.682 MSK [507] STATEMENT:  alter table rooms add constraint del_rooms_id_for foreign key (emp_id) references employees(rooms_id);
+2020-11-14 21:17:44.116 MSK [516] ERROR:  there is no unique constraint matching given keys for referenced table "pcs"
+2020-11-14 21:17:44.116 MSK [516] STATEMENT:  alter table installs add constraint del_pc_id_for foreign key(pc_id) references pcs (id);
+2020-11-14 21:17:44.127 MSK [516] ERROR:  there is no unique constraint matching given keys for referenced table "rooms"
+2020-11-14 21:17:44.127 MSK [516] STATEMENT:  alter table pcs add constraint del_room_id_for foreign key(room_id) references rooms (id);
+2020-11-14 21:17:44.135 MSK [516] ERROR:  there is no unique constraint matching given keys for referenced table "employees"
+2020-11-14 21:17:44.135 MSK [516] STATEMENT:  alter table rooms add constraint del_rooms_id_for foreign key (emp_id) references employees (id);
+2020-11-14 21:24:43.602 MSK [324] LOG:  received smart shutdown request
+2020-11-14 21:24:43.607 MSK [324] LOG:  background worker "logical replication launcher" (PID 331) exited with exit code 1
+2020-11-14 21:24:43.608 MSK [326] LOG:  shutting down
+2020-11-14 21:24:43.626 MSK [324] LOG:  database system is shut down
+2020-11-14 21:25:19.365 MSK [367] LOG:  starting PostgreSQL 12.4 on x86_64-pc-linux-gnu, compiled by gcc (Debian 8.3.0-6) 8.3.0, 64-bit
+2020-11-14 21:25:19.366 MSK [367] LOG:  listening on IPv6 address "::1", port 5432
+2020-11-14 21:25:19.366 MSK [367] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2020-11-14 21:25:19.370 MSK [367] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2020-11-14 21:25:19.392 MSK [368] LOG:  database system was shut down at 2020-11-14 21:24:43 MSK
+2020-11-14 21:25:19.399 MSK [367] LOG:  database system is ready to accept connections
+2020-11-14 21:25:28.859 MSK [378] ERROR:  there is no unique constraint matching given keys for referenced table "pcs"
+2020-11-14 21:25:28.859 MSK [378] STATEMENT:  alter table installs add constraint del_pc_id_for foreign key(pc_id) references pcs (id);
+2020-11-14 21:25:28.882 MSK [378] ERROR:  there is no unique constraint matching given keys for referenced table "rooms"
+2020-11-14 21:25:28.882 MSK [378] STATEMENT:  alter table pcs add constraint del_room_id_for foreign key(room_id) references rooms (id);
+2020-11-14 21:25:28.887 MSK [378] ERROR:  there is no unique constraint matching given keys for referenced table "employees"
+2020-11-14 21:25:28.887 MSK [378] STATEMENT:  alter table rooms add constraint del_rooms_id_for foreign key (emp_id) references employees (id);
